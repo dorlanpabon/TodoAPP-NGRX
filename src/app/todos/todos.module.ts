@@ -7,6 +7,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoPageComponent } from './todo-page/todo-page.component';
 //forms reactive
 import { ReactiveFormsModule } from '@angular/forms';
+import { FiltroPipe } from './filtro.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TodoFooterComponent,
     TodoItemComponent,
     TodoListComponent,
-    TodoPageComponent
+    TodoPageComponent,
+    FiltroPipe
   ],
   imports: [
     CommonModule,
