@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import { FiltroActions } from 'src/app/filtro/filtro.actions';
 import { filtro } from 'src/app/filtro/filtro.actions';
+import { borrarCompletados } from '../todo.actions';
 
 
 @Component({
@@ -28,6 +29,10 @@ export class TodoFooterComponent implements OnInit {
 
   cambiarFiltro(filtroA: FiltroActions) {
     this.store.dispatch(filtro({ filtro: filtroA }));
+  }
+
+  borrarCompletados() {
+    this.store.dispatch(borrarCompletados());
   }
 
 }

@@ -13,7 +13,8 @@ const _todoReducer = createReducer(estadoInicial,
     on(actions.toggle, (state, { id }) => state.map(todo => todo.id === id ? { ...todo, completado: !todo.completado } : todo)),
     on(actions.toggleAll, (state, { completado }) => state.map(todo => { return { ...todo, completado: completado } })),
     on(actions.editar, (state, { id, texto }) => state.map(todo => todo.id === id ? { ...todo, texto } : todo)),
-    on(actions.borrar, (state, { id }) => state.filter(todo => todo.id !== id))
+    on(actions.borrar, (state, { id }) => state.filter(todo => todo.id !== id)),
+    on(actions.borrarCompletados, (state) => state.filter(todo => !todo.completado))
 );
 
 export function todoReducer(state: Todo[] = estadoInicial, action: Action) {
